@@ -3,30 +3,39 @@ Simple Email Notification of Machine Learning
 
 ## Description
 
-The `senmal` project is a simple system designed to train a machine learning model and send email notifications about the training progress and results. This project is mainly useful for remote training tasks where direct monitoring might not be possible. By receiving these notifications, you can keep track of how well your model is training.
+The `senmal` project comprises a function, `send_notification`, which is designed to send email notifications. While this function can be utilized in various applications, an illustrative use-case is provided in `example.py`, demonstrating its utility in the context of tracking the training progress of machine learning models.
 
-The project contains two main Python scripts:
+This project contains two Python scripts:
 
-1. `send_notifications.py`: This script is used to send email notifications about the training status of the model. It defines the `send_notification` function which takes various parameters such as sender's email, receiver's email, message to be sent, etc.
+1. `send_notifications.py`: Defines the `send_notification` function which takes various parameters such as sender's email, receiver's email, message to be sent, etc. This function can be employed to send notifications in various scenarios.
 
-2. `example.py`: This script is used for model training. It trains a logistic regression model on the Iris dataset. After each epoch, it sends an email notification about the loss and accuracy of the model on the validation set.
+2. `example.py`: An example application of the `send_notification` function in a machine learning training scenario. It trains a logistic regression model on the Iris dataset, and after each epoch, an email notification about the loss and accuracy of the model on the validation set is sent.
 
 ## Dependencies
 
-The project requires the following Python libraries:
+The main function, `send_notification`, requires the following Python libraries:
 
 - smtplib
 - email
+
+For the example application (`example.py`), the following additional libraries are necessary:
+
 - sklearn
 - numpy
 
 ## Usage
 
-To use this project:
+To use the `send_notification` function:
 
-1. Update the `sender_email` and `sender_auth` with the sender's email ID and the sender's authentication key in both `example.py` and `send_notifications.py`.
+1. Import the function into your Python script from `send_notifications.py`.
 
-2. Update the `receiver_email` with the receiver's email ID in both `example.py` and `send_notifications.py`.
+2. Configure the function parameters according to your requirements (sender's email, receiver's email, message, etc.)
+
+For the example application:
+
+1. Update the `sender_email` and `sender_auth` with the sender's email ID and the sender's authentication key in `example.py`.
+
+2. Update the `receiver_email` with the receiver's email ID in `example.py`.
 
 3. Run `example.py` to start training the model. After each epoch, an email will be sent with the loss and accuracy of the model on the validation set.
 
